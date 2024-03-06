@@ -1,0 +1,11 @@
+{
+    "build": {
+      "useDockerfile": true
+    },
+    "run": {
+      "web": {
+        "port": 8080,
+        "command": "npm start"
+      }
+    }
+  }
