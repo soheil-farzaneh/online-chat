@@ -1,19 +1,17 @@
 const express = require("express");
 const { createServer } = require("http");
+const cors = require("cors");
 
 const PORT = 8080;
+const corsOption = {
+  origin: "http://192.168.58.191:3000",
+};
 
 const app = express();
 const server = createServer(app);
-const io = require("socket.io")(server, {
-  cors: {
-    origin: "http://192.168.58.191:3000",
-    methods: ["GET", "POST"],
-    allowedHeaders: ["my-custom-header"],
-    credentials: true,
-  },
-});
+const io = require("socket.io");
 
+app.use(cors(corsOption));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
