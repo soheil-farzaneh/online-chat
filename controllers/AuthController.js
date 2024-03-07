@@ -5,11 +5,9 @@ class AuthController {
   login(req, res) {
     const { phone } = req.body;
   }
-
-  register(req, res) {}
 }
 
 module.exports = {
-    login,
-    register
-}
+  login,
+  register,
+};
